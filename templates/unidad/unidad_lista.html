@@ -1,0 +1,9 @@
+{%if object_list%}
+    {%for unidad in object_list%}
+        {{unidad.id}}-- 
+        {{unidad.numero_unidad}} --
+        {{unidad.piso}} --
+        {{unidad.servicio_unidad.nombre}} --
+        {{unidad.hotel}}
+    {%endfor%}
+{%endif%}

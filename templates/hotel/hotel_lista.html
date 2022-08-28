@@ -1,0 +1,13 @@
+ {%if object_list %}
+
+    {%for hotel in object_list%}
+        <td>{{hotel.id}} ---</td>
+        <td>{{hotel.nombre}} ---</td>
+        <td>{{hotel.ubucacion}} ---</td>
+        <td>{{hotel.descripcion}} ---</td>
+        <td>{{hotel.servicio_hotel.nombre}}</td>
+    {%endfor%}
+
+{%else%}
+<h2>No hay registros</h2>
+{%endif%}
