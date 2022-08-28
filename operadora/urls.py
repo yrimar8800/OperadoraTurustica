@@ -22,5 +22,4 @@ urlpatterns = [
     path('hotel/', include('apps.hotel.urls')),
     path('usuarios/', include('apps.usuarios.urls')),
     path('login/', LoginView.as_view(template_name='index.html'))
-    path('usuarios/', include('apps.usuarios.urls')),
 ]
