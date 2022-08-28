@@ -1,6 +1,6 @@
 <form method="POST">
     {%csrf_token%}
     {{form.as_p}}
-    <h3>Segura que desa eliminar a {{object_list.numero_unidad}} </h3>
+    <h3>Segura que desa eliminar a este objeto {{object_list.numero_unidad}} </h3>
     <button type="submit">Eliminar</button>
 </form>
