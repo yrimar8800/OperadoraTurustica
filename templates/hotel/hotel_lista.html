@@ -5,7 +5,7 @@
         <td>{{hotel.descripcion}} ---</td>
         <td>{{hotel.servicio_hotel.nombre}}</td>
     {%endfor%}
-
+    <a href="{%url 'salir' %} ">salir</a>
 {%else%}
 <h2>No hay registros</h2>
 {%endif%}
