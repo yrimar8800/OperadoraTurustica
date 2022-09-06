@@ -8,6 +8,7 @@ class ServicioHotel(models.Model):
         return self.nombre
 
 class Hotel(models.Model):
+    precio_hotel = models.FloatField(blank=True, null=True)
     nombre = models.CharField(max_length=50)
     ubucacion = models.CharField(max_length=50)
     descripcion = models.CharField(blank=True, max_length=50,)
@@ -29,5 +30,6 @@ class Unidad(models.Model):
     servicio_unidad = models.ManyToManyField(ServicioUnidad, null=True, blank=True)
     hotel = models.ForeignKey(Hotel, null=True, blank=True, on_delete=models.CASCADE)
 
-    def __str__(self) -> str:
+    def __int__(self) -> int:
         return self.numero_unidad
+  
