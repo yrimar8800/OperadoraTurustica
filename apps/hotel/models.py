@@ -24,6 +24,7 @@ class ServicioUnidad(models.Model):
         return self.nombre
 
 class Unidad(models.Model):
+    precio = models.FloatField(null=True)
     numero_unidad = models.IntegerField()
     piso = models.IntegerField()
     servicio_unidad = models.ManyToManyField(ServicioUnidad, null=True, blank=True)
