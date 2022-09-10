@@ -1,12 +1,39 @@
- {%if object_list %}
-    {%for hotel in object_list%}
-        <td>{{hotel.id}} ---</td>
-        <td>{{hotel.nombre}} ---</td>
-        <td>{{hotel.ubucacion}} ---</td>
-        <td>{{hotel.descripcion}} ---</td>
-        <td>{{hotel.servicio_hotel.nombre}}</td>
-    {%endfor%}
-    <a href="{%url 'salir' %} ">salir</a>
-{%else%}
-<h2>No hay registros</h2>
-{%endif%}
+ {% extends 'base/base.html' %}
+ 
+{%block content%}
+<a href="{%url 'crear' %} ">+</a>
+
+<table class="table ">
+    <thead>
+        <tr>
+            <td>id</td>
+            <td>Nombre</td>
+            <td>precio</td>
+            <td>Ubicacion</td>
+            <td>Descripcion</td>
+            <td>Acciones</td>
+        </tr>
+    </thead>
+    <tbody>
+        {%if object_list %}
+        {%for hotel in object_list%}
+        <tr>
+            <td>{{hotel.id}} </td>
+            <td>{{hotel.nombre}} </td>
+            <td>{{hotel.precio_hotel}} </td>
+            <td>{{hotel.ubucacion}} </td>
+            <td>{{hotel.descripcion}} </td>
+            <td>
+                <a href="{% url  'editar' hotel.id %} "><button>editar</button></a>
+                <a href="{%url 'eliminar' hotel.id %} "><button>eliminar</button></a>
+            </td>
+        </tr>
+        {% endfor %}
+
+        {%else%}
+        <h1>No hay registros</h1>
+        {%endif%}
+    </tbody>
+</table>
+
+{% endblock%}

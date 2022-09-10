@@ -12,7 +12,7 @@ class Hotel(models.Model):
     nombre = models.CharField(max_length=50)
     ubucacion = models.CharField(max_length=50)
     descripcion = models.CharField(blank=True, max_length=50,)
-    servicio_hotel = models.ManyToManyField(ServicioHotel, null=True, blank=True)
+    servicio_hotel = models.ManyToManyField(ServicioHotel, blank=True)
 
     def __str__(self) -> str:
         return self.nombre
@@ -27,7 +27,7 @@ class ServicioUnidad(models.Model):
 class Unidad(models.Model):
     numero_unidad = models.IntegerField()
     piso = models.IntegerField()
-    servicio_unidad = models.ManyToManyField(ServicioUnidad, null=True, blank=True)
+    servicio_unidad = models.ManyToManyField(ServicioUnidad, blank=True)
     hotel = models.ForeignKey(Hotel, null=True, blank=True, on_delete=models.CASCADE)
 
     def __int__(self) -> int:

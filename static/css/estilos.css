@@ -1,0 +1,36 @@
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+  }
+  
+  li {
+    float: left;
+  }
+  
+  li a {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+  li a:hover {
+    background-color: #111;
+  }
+  
+  .active {
+    background-color: blue;
+  }
+  body {font-family: Arial, Helvetica, sans-serif;}
+  table { font-family: «Lucida Sans Unicode», «Lucida Grande», Sans-Serif;
+  font-size: 12px; margin: 45px; width: 94%; text-align: left; border-collapse: collapse; }
+  
+  th { font-size: 13px; font-weight: normal; padding: 8px; background: #b9c9fe;
+  border-top: 4px solid #aabcfe; border-bottom: 1px solid #fff; color: #039; }
+  
+  td { padding: 8px; background: #e8edff; border-bottom: 1px solid #fff;
+  color: #669; border-top: 1px solid transparent; }

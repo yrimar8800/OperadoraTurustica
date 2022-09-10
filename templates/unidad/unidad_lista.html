@@ -1,3 +1,6 @@
+{% extends 'base/base.html' %}
+
+{%block content%}
 {%if object_list%}
     {%for unidad in object_list%}
         {{unidad.id}}-- 
@@ -7,3 +10,5 @@
         {{unidad.hotel}}
     {%endfor%}
 {%endif%}
+
+{%endblock%}
