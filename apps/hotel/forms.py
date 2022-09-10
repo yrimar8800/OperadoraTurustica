@@ -7,6 +7,7 @@ class HotelFormulario(forms.ModelForm):
 
         fields = [
             'nombre',
+            'precio_hotel',
             'ubucacion',
             'descripcion',
             'servicio_hotel',
@@ -15,6 +16,7 @@ class HotelFormulario(forms.ModelForm):
 
         labels = {
             'nombre': 'Nombre',
+            'precio_hotel': 'Precio',
             'ubucacion': 'Ubicacion',
             'descripcion': 'Descripcion',
             'servicio_hotel': 'Servicios del Hotel',
@@ -22,6 +24,7 @@ class HotelFormulario(forms.ModelForm):
 
         widgets = {
             'nombre': forms.TextInput(),
+            'precio_hotel': forms.TextInput(),
             'ubucacion': forms.TextInput(),
             'descripcion': forms.TextInput(),
             'servicio_hotel': forms.CheckboxSelectMultiple(),
