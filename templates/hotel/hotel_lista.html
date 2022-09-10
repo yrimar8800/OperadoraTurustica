@@ -7,6 +7,7 @@
     <h3>Bienvenido {{user.username}} - <a href="{%url 'salir' %} ">Salir</a></h3>
 {%endif%}
 
+
 <table class="table ">
     <thead>
         <tr>
@@ -30,6 +31,7 @@
             <td>
                 <a href="{% url  'editar' hotel.id %} "><button>editar</button></a>
                 <a href="{%url 'eliminar' hotel.id %} "><button>eliminar</button></a>
+                <a href="{%url 'detalle' hotel.id %} "><button>detalle</button></a>
             </td>
         </tr>
         {% endfor %}
@@ -39,5 +41,6 @@
         {%endif%}
     </tbody>
 </table>
+
 
 {% endblock%}

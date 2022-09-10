@@ -4,6 +4,7 @@ from apps.hotel.views import *
 urlpatterns = [
     #------ Urls Hotel ------
     path('lista/', HotelLista.as_view(), name='lista'),
+    path('detalle/<pk>/', HotelDetalle.as_view(), name='detalle'),
     path('crear/', HotelCrear.as_view(), name='crear'),
     path('editar/<pk>/', HotelEditar.as_view(), name='editar'),
     path('eliminar/<pk>/', HotelEliminar.as_view(), name='eliminar'),

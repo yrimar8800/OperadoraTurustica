@@ -1,0 +1,17 @@
+{%extends 'base/base.html'%}
+
+{%block content%}
+{%if hotel %}
+<center>
+    <h4>id: {{hotel.id}}</h4><tr>
+    <h4>Nombre: {{hotel.nombre}}</h4><tr>
+    <h4>Preio: {{hotel.precio_hotel}}</h4><tr>
+    <h4>Ubicacion: {{hotel.ubucacion}}</h4><tr>
+    <h4>Descripcion: {{hotel.descripcion}}</h4><tr>
+</center>
+<hr>
+
+{%endif%}
+
+
+{%endblock%}

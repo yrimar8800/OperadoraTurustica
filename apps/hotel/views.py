@@ -11,6 +11,10 @@ class HotelLista(ListView):
     model = Hotel
     template_name = 'hotel/hotel_lista.html'
 
+class HotelDetalle(DetailView):
+    model = Hotel
+    template_name = 'hotel/detalle.html'
+
 class HotelEditar(UpdateView):
     model = Hotel
     template_name = 'hotel/hotel_form.html'
