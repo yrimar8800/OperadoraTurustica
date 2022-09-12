@@ -12,8 +12,14 @@ class HotelLista(ListView):
     template_name = 'hotel/hotel_lista.html'
 
 class HotelDetalle(DetailView):
-    model = Hotel
     template_name = 'hotel/detalle.html'
+    queryset = Hotel.objects.all()
+    context_object_name = 'hotel'
+
+    def get_context_data(self, **kwargs):
+        context = super(HotelDetalle, self).get_context_data()
+        context['unidad'] = Unidad.objects.all()
+        return context
 
 class HotelEditar(UpdateView):
     model = Hotel

@@ -42,5 +42,10 @@
     </tbody>
 </table>
 
+{%if unidad%}
+{%for un in unidad%}
+ {{un.id}}
+{%endfor%}
+{%endif%}
 
 {% endblock%}
