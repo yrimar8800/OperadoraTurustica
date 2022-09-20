@@ -31,8 +31,10 @@
             <td>{{hotel.descripcion}} </td>
             <td>
                 
-                    {% for sevicio in hotel.servicio_hotel.all%}<ul>
-                    <li>{{sevicio.nombre}}</li> </ul> 
+                    {% for sevicio in hotel.servicio_hotel.all%}
+                    <ul>
+                    <li>{{sevicio.nombre}}</li> 
+                    </ul> 
                     {%endfor%}
                          
             </td>        

@@ -10,11 +10,27 @@
     <h4>Descripcion: {{hotel.descripcion}}</h4><tr>
 </center>
 <hr>
-{%if unidad %}
-{%for un in unidad%}
-    {{un.id}}
+{%if servicios %}
+{%for servicio in servicios%}
+    {{servicio.id}}
+    {{servicio.nombre}}
 {%endfor%}
 {%endif%}
+-----------------------
+<h3>unidades</h3>
+{%if unidades %}
+
+
+{%for unidad in unidades%}
+<ul>
+    <li>id - {{unidad.id }} </li>
+    <li>numero_unidad - {{unidad.numero_unidad }} </li>
+    <li>piso - {{unidad.piso }} </li>
+</ul>
+{%endfor%}
+
+{%endif%}
+
 {%endif%}
 
 
