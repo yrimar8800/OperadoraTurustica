@@ -1,11 +1,17 @@
-ul {
+.yopi {
     list-style-type: none;
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: #333;
+    background-color: rgb(37, 32, 32);
   }
-  
+
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+  }
   li {
     float: left;
   }

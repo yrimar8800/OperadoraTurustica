@@ -16,6 +16,7 @@
             <td>precio</td>
             <td>Ubicacion</td>
             <td>Descripcion</td>
+            <td>Servicios del Hotel</td>
             <td>Acciones</td>
         </tr>
     </thead>
@@ -28,6 +29,14 @@
             <td>{{hotel.precio_hotel}} </td>
             <td>{{hotel.ubucacion}} </td>
             <td>{{hotel.descripcion}} </td>
+            <td>
+                
+                    {% for sevicio in hotel.servicio_hotel.all%}<ul>
+                    <li>{{sevicio.nombre}}</li> </ul> 
+                    {%endfor%}
+                         
+            </td>        
+            
             <td>
                 <a href="{% url  'editar' hotel.id %} "><button>editar</button></a>
                 <a href="{%url 'eliminar' hotel.id %} "><button>eliminar</button></a>
