@@ -11,12 +11,13 @@
 </center>
 <hr>
 {%if servicios %}
+<h3>Servicios</h3>
 {%for servicio in servicios%}
     {{servicio.id}}
     {{servicio.nombre}}
 {%endfor%}
 {%endif%}
------------------------
+
 <h3>unidades</h3>
 {%if unidades %}
 {%for unidad in unidades%}
