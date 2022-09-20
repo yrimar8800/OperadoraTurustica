@@ -19,17 +19,24 @@
 -----------------------
 <h3>unidades</h3>
 {%if unidades %}
-
-
 {%for unidad in unidades%}
 <ul>
     <li>id - {{unidad.id }} </li>
     <li>numero_unidad - {{unidad.numero_unidad }} </li>
     <li>piso - {{unidad.piso }} </li>
+
+    {%for servcio in unidad.servicio_unidad.all%}
+    {{servcio.id}}
+    {{servcio.nombre}}
+    {{servcio.descripcion}}
+
+    {%endfor%}
 </ul>
 {%endfor%}
-
 {%endif%}
+
+
+
 
 {%endif%}
 
