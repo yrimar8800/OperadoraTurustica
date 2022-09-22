@@ -8,36 +8,54 @@
     <h4>Preio: {{hotel.precio_hotel}}</h4><tr>
     <h4>Ubicacion: {{hotel.ubucacion}}</h4><tr>
     <h4>Descripcion: {{hotel.descripcion}}</h4><tr>
-</center>
-<hr>
-{%if servicios %}
-<h3>Servicios</h3>
-{%for servicio in servicios%}
-    {{servicio.id}}
-    {{servicio.nombre}}
-{%endfor%}
-{%endif%}
+        {%if servicios %}
+        <h3>Servicios</h3>
+        {%for servicio in servicios%}
+            {{servicio.id}}
+            {{servicio.nombre}}
+        {%endfor%}
+        {%endif%}
+</center><hr>
+<a href="{% url 'crear_unidad' %} ">+</a>
+<table class="table">
 
-<h3>unidades</h3>
-{%if unidades %}
-{%for unidad in unidades%}
-<ul>
-    <li>id - {{unidad.id }} </li>
-    <li>numero_unidad - {{unidad.numero_unidad }} </li>
-    <li>piso - {{unidad.piso }} </li>
+    <thead>
+        <tr>
+            <td>id</td>
+            <td>piso</td>
+            <td>numero de unidad</td>
+            <td>servicios de la unidad</td>
+            <td>Acciones</td>
+        </tr>
+    </thead>
 
-    {%for servcio in unidad.servicio_unidad.all%}
-    {{servcio.id}}
-    {{servcio.nombre}}
-    {{servcio.descripcion}}
+    <tbody>
+        {%if unidades%}
+            {%for unidad in unidades%}
+                <tr>
+                    <td>{{unidad.id}}</td>
+                    <td>{{unidad.piso}}</td>
+                    <td>{{unidad.numero_unidad}}</td>
+            
+                    <td> 
+                        {%for servicio in unidad.servicio_unidad.all %}
+                            <ul>    
+                                <li>{{servicio.nombre}}</li>
+                            </ul> 
+                        {%endfor%}
+                    </td>
+                    <td>
+                        <a href="{%url 'editar_unidad' unidad.id %} "><button> editar </button> </a>
+                        <a href="{%url 'eliminar_unidad' unidad.id %} "><button> eliminar </button> </a>
+                    </td>
 
-    {%endfor%}
-</ul>
-{%endfor%}
-{%endif%}
-
-
-
+                </tr>
+            {%endfor%}
+        {%else%}
+                <h3>No hay unidades registradas</h3>
+        {%endif%}
+    </tbody>
+</table>
 
 {%endif%}
 

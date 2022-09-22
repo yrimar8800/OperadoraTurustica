@@ -9,6 +9,7 @@
 
 
 <table class="table ">
+    
     <thead>
         <tr>
             <td>id</td>
@@ -23,6 +24,7 @@
     <tbody>
         {%if object_list %}
         {%for hotel in object_list%}
+        
         <tr>
             <td>{{hotel.id}} </td>
             <td>{{hotel.nombre}} </td>
@@ -30,14 +32,14 @@
             <td>{{hotel.ubucacion}} </td>
             <td>{{hotel.descripcion}} </td>
             <td>
-                
+                <a href="{%url 'detalle' hotel.id %} ">
                     {% for sevicio in hotel.servicio_hotel.all%}
                     <ul>
                     <li>{{sevicio.nombre}}</li> 
                     </ul> 
-                    {%endfor%}
+                    {%endfor%}</a> 
                          
-            </td>        
+            </td>       
             
             <td>
                 <a href="{% url  'editar' hotel.id %} "><button>editar</button></a>
